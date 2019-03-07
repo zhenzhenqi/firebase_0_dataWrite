@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Write Data</title>
+</head>
+
+<body>
+
+	<!-- Riot Mount Point -->
+	<app></app>
+
+	<!-- Riot TAGS -->
+	<script src="tags/app.tag" type="riot/tag"></script>
+
+	<!-- Riot + Firebase IMPORT -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.8.1/riot+compiler.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyB-KGod5FgwB7D8ZAs3l1Xb2-_oX4KgScE",
+			authDomain: "write2-319e9.firebaseapp.com",
+			databaseURL: "https://write2-319e9.firebaseio.com",
+			projectId: "write2-319e9",
+			storageBucket: "write2-319e9.appspot.com",
+			messagingSenderId: "112426494810"
+		};
+		firebase.initializeApp(config);
+
+		//firebase is a js object that help communicate between your code and the cloud server
+		//get a function from this object that specifically deals with database
+		var database = firebase.database();
+
+		//step one: it's a common practice to get the reference to the root of the database
+		var rootRef = database.ref('/');
+
+		// Initialize RiotJS
+		riot.mount('*');
+	</script>
+
+</body>
+
+</html>
